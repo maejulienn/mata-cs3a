@@ -1,6 +1,6 @@
 # Welcome to streamlit
 
-[My Streamlit App] (https://mata-cs3a-wp9as4ngdq.streamlit.app/)
+[My Streamlit App](https://mata-cs3a-wp9as4ngdq.streamlit.app/)
 
 This is the app you get when you run `streamlit hello`, extracted as its own app.
 
