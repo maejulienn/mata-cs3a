@@ -23,13 +23,16 @@ plaintext = bytes(st.text_area("Plain Text:").encode())
 key = bytes(st.text_input("Key:").encode())
 
 if st.button("Submit"):
-    if not (1 < len(plaintext) >= len(key) >= 1):
-        st.write("Plaintext length should be equal or greater than the length of key")
-    elif not plaintext != key:
-        st.write("Plaintext should not be equal to the key")
+    if not key:
+        st.error("Invalid Key")
     else:
-        ciphertext = xor_encrypt(plaintext, key)
-        st.write("Ciphertext:", ciphertext.decode())
+        if not (1 < len(plaintext) >= len(key) >= 1):
+            st.write("Plaintext length should be equal or greater than the length of key")
+        elif not plaintext != key:
+            st.write("Plaintext should not be equal to the key")
+        else:
+            ciphertext = xor_encrypt(plaintext, key)
+            st.write("Ciphertext:", ciphertext.decode())
 
-        decrypted = xor_decrypt(ciphertext, key)
-        st.write("Decrypted:",decrypted.decode())
+            decrypted = xor_decrypt(ciphertext, key)
+            st.write("Decrypted:",decrypted.decode())
